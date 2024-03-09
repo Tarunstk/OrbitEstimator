@@ -1,6 +1,7 @@
-package com.example.src.main.java.orbittracker;
+package orbittracker.models;
+
 //This class gets its data from TLE files after decoding it
-public class satellite {
+public class Satellite {
     private String name;
     private double in;//inclination
     private double raan;//Ascension node (right angle)
@@ -9,10 +10,10 @@ public class satellite {
     private double v0;//true anamoly = mean anamoly
     private double n0;//mean motion
 
-    public satellite() {
+    public Satellite() {
     }
 
-    public satellite(String name, double in, double raan, double e, double omega, double v0, double n0) {
+    public Satellite(String name, double in, double raan, double e, double omega, double v0, double n0) {
         this.name = name;
         this.in = in;
         this.raan = raan;
