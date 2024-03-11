@@ -1,40 +1,43 @@
 package orbittracker.services.impl;
 
 import orbittracker.models.Satellite;
-import orbittracker.repositories.SatelliteDB;
+import orbittracker.repositories.SatelliteDBLocal;
 import orbittracker.services.SatelliteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class SatelliteServiceImpl implements SatelliteService {
 
-    List<Satellite> sats = new ArrayList<>();
-    SatelliteDB db = SatelliteDB.getInstance();
+//   final SatelliteDB db = SatelliteDB.getInstance(); Substituted with actual db impl
+
+    private final SatelliteDBLocal satelliteDBLocal;
+
+    @Autowired
+    public SatelliteServiceImpl(SatelliteDBLocal satelliteDBLocal) {
+        this.satelliteDBLocal = satelliteDBLocal;
+    }
 
     @Override
-    public void addSatellite(Satellite s) {
-        sats.add(s); //ideally to be fetched from db
-        db.save(s);
+    public void addSatellite(Satellite satellite) {
+        satelliteDBLocal.addSatellite(satellite);
     }
 
     @Override
     public List<Satellite> getAllSats() {
-        //ideally to be fetched from db
-        return sats;
+        return satelliteDBLocal.getSatellites();
     }
 
     @Override
-    public Satellite getSat(String s) {
-        //ideally to be fetched from db
+    public Satellite getSat(String satellite) {
+        return satelliteDBLocal.getSatellite(satellite);
+    }
 
-        Satellite sat = new Satellite();
-        for (Satellite slist : sats) {
-            if (slist.getName().equals(s)) {
-                sat = slist;
-            }
-        }
-        return sat;
+    @Override
+    public List<Satellite> getStartingMatches(String partialName) {
+        return satelliteDBLocal.getStartingMatches(partialName);
     }
 
 }

@@ -1,7 +1,8 @@
 package orbittracker.models;
 
+import org.springframework.stereotype.Component;
 
-//@Entity
+@Component
 public class JulianDate {
     private Long id;
     private double year;
@@ -17,7 +18,6 @@ public class JulianDate {
         this.month = month;
         this.day = day;
     }
-
 
     public double getYear() {
         return year;
@@ -50,7 +50,6 @@ public class JulianDate {
     public void setId(Long id) {
         this.id = id;
     }
-
 
     @Override
     public String toString() {

@@ -12,9 +12,9 @@
 	<artifactId>julianDate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>julianDate</name>
-	<description>Demo project for Spring Boot</description>
+	<description>OrbitEstimator project using Spring Boot</description>
 	<properties>
-		<java.version>17</java.version> <!-- changed for local testing -->
+		<java.version>21</java.version> <!-- changed for local testing -->
 	</properties>
 	<dependencies>
 		<dependency>

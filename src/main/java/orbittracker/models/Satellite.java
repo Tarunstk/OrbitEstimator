@@ -1,14 +1,17 @@
 package orbittracker.models;
 
-//This class gets its data from TLE files after decoding it
+import org.springframework.stereotype.Component;
+
+// This class gets its data from TLE files after decoding it
+@Component
 public class Satellite {
     private String name;
-    private double in;//inclination
-    private double raan;//Ascension node (right angle)
-    private double e; //eccentricity
-    private double omega;//Argument of Perigee
-    private double v0;//true anamoly = mean anamoly
-    private double n0;//mean motion
+    private double in;    // inclination
+    private double raan;  // Ascension node (right angle)
+    private double e;     // eccentricity
+    private double omega; // Argument of Perigee
+    private double v0;    // true anomaly = mean anomaly
+    private double n0;    // mean motion
 
     public Satellite() {
     }
@@ -79,9 +82,9 @@ public class Satellite {
         this.n0 = n0;
     }
 
-    //@Override
+    @Override
     public String toString() {
-        return "satelliteData{" +
+        return "Satellite{" +
                 "name='" + name + '\'' +
                 ", in=" + in +
                 ", raan=" + raan +

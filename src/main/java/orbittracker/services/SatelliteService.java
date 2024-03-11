@@ -4,12 +4,13 @@ import orbittracker.models.Satellite;
 
 import java.util.List;
 
-// Add @Service annotation when enabling SpringApplication
 public interface SatelliteService {
 
-    void addSatellite(Satellite s);
+    void addSatellite(Satellite satellite);
 
     List<Satellite> getAllSats();
 
-    Satellite getSat(String s);
+    Satellite getSat(String satellite);
+
+    List<Satellite> getStartingMatches(String name);
 }
