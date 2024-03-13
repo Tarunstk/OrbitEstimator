@@ -1,17 +1,27 @@
-package com.example.src.main.java.orbittracker;
+package orbittracker.repositories.utils;
 
-public class dbProperties {
+public class DbProperties {
+    // Singleton Pattern to load only one property per instance.
+    private static volatile DbProperties instance;
+
     private String url = "jdbc:postgresql://localhost:5432/satellites";
     private String password = "1797";
     private String username = "postgres";
 
-    public dbProperties() {
+    // Private constructor to prevent instantiation from outside
+    private DbProperties() {
     }
 
-    public dbProperties(String url, String password, String username) {
-        this.url = url;
-        this.password = password;
-        this.username = username;
+    public static DbProperties getInstance() {
+        // Double-checking for thread safety
+        if (instance == null) {
+            synchronized (DbProperties.class) {
+                if (instance == null) {
+                    instance = new DbProperties();
+                }
+            }
+        }
+        return instance;
     }
 
     public String getUrl() {
@@ -40,7 +50,7 @@ public class dbProperties {
 
     @Override
     public String toString() {
-        return "dbProperties{" +
+        return "DbProperties{" +
                 "url='" + url + '\'' +
                 ", username='" + username + '\'' +
                 '}';

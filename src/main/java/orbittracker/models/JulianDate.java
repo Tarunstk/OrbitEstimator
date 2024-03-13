@@ -1,23 +1,23 @@
-package com.example.src.main.java.orbittracker;
+package orbittracker.models;
 
+import org.springframework.stereotype.Component;
 
-//@Entity
-public class julianDate {
+@Component
+public class JulianDate {
     private Long id;
     private double year;
     private double month;
     private double day;
 
-    public julianDate() {
+    public JulianDate() {
     }
 
-    public julianDate(Long id, double year, double month, double day) {
+    public JulianDate(Long id, double year, double month, double day) {
         this.id = id;
         this.year = year;
         this.month = month;
         this.day = day;
     }
-
 
     public double getYear() {
         return year;
@@ -51,10 +51,9 @@ public class julianDate {
         this.id = id;
     }
 
-
     @Override
     public String toString() {
-        return "julianDate{" +
+        return "JulianDate{" +
                 "id=" + id +
                 ", year=" + year +
                 ", month=" + month +

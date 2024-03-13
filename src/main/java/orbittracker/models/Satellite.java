@@ -1,18 +1,22 @@
-package com.example.src.main.java.orbittracker;
-//This class gets its data from TLE files after decoding it
-public class satellite {
-    private String name;
-    private double in;//inclination
-    private double raan;//Ascension node (right angle)
-    private double e; //eccentricity
-    private double omega;//Argument of Perigee
-    private double v0;//true anamoly = mean anamoly
-    private double n0;//mean motion
+package orbittracker.models;
 
-    public satellite() {
+import org.springframework.stereotype.Component;
+
+// This class gets its data from TLE files after decoding it
+@Component
+public class Satellite {
+    private String name;
+    private double in;    // inclination
+    private double raan;  // Ascension node (right angle)
+    private double e;     // eccentricity
+    private double omega; // Argument of Perigee
+    private double v0;    // true anomaly = mean anomaly
+    private double n0;    // mean motion
+
+    public Satellite() {
     }
 
-    public satellite(String name, double in, double raan, double e, double omega, double v0, double n0) {
+    public Satellite(String name, double in, double raan, double e, double omega, double v0, double n0) {
         this.name = name;
         this.in = in;
         this.raan = raan;
@@ -78,9 +82,9 @@ public class satellite {
         this.n0 = n0;
     }
 
-    //@Override
+    @Override
     public String toString() {
-        return "satelliteData{" +
+        return "Satellite{" +
                 "name='" + name + '\'' +
                 ", in=" + in +
                 ", raan=" + raan +
