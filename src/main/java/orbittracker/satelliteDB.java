@@ -1,13 +1,16 @@
 package com.example.src.main.java.orbittracker;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-public class satelliteDB {
-    Connection conn = null;
-    dbProperties db = new dbProperties();
+@Repository
+public interface satelliteDB extends JpaRepository<satellite,String> {
+    /*Connection conn = null;
+    //dbProperties db = new dbProperties();
     public satelliteDB(){
         try {
             conn = DriverManager.getConnection(db.getUrl(),db.getUsername(),db.getPassword());
@@ -31,4 +34,6 @@ public class satelliteDB {
             throw new RuntimeException(e);
         }
     }
+
+     */
 }

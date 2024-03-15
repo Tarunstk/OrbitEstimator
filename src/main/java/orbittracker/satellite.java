@@ -1,8 +1,15 @@
 package com.example.src.main.java.orbittracker;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 //This class gets its data from TLE files after decoding it
+@Entity
 public class satellite {
+    @Id
     private String name;
-    private double in;//inclination
+    private double inc;//inclination
     private double raan;//Ascension node (right angle)
     private double e; //eccentricity
     private double omega;//Argument of Perigee
@@ -12,9 +19,9 @@ public class satellite {
     public satellite() {
     }
 
-    public satellite(String name, double in, double raan, double e, double omega, double v0, double n0) {
+    public satellite(String name, double inc, double raan, double e, double omega, double v0, double n0) {
         this.name = name;
-        this.in = in;
+        this.inc = inc;
         this.raan = raan;
         this.e = e;
         this.omega = omega;
@@ -30,12 +37,12 @@ public class satellite {
         this.name = name;
     }
 
-    public double getIn() {
-        return in;
+    public double getInc() {
+        return inc;
     }
 
-    public void setIn(double in) {
-        this.in = in;
+    public void setInc(double in) {
+        this.inc = inc;
     }
 
     public double getRaan() {
@@ -82,7 +89,7 @@ public class satellite {
     public String toString() {
         return "satelliteData{" +
                 "name='" + name + '\'' +
-                ", in=" + in +
+                ", in=" + inc +
                 ", raan=" + raan +
                 ", e=" + e +
                 ", omega=" + omega +
