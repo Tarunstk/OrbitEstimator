@@ -15,7 +15,7 @@ public class satelliteService {
         //sats.add(s);
         db.save(s);
     }
-    public List<satellite> getAllSats(){
+    public List<satellite> getAllSats() {
         return db.findAll();
         //return sats;
     }
