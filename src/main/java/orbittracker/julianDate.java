@@ -4,12 +4,10 @@ package com.example.src.main.java.orbittracker;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-@Entity
 public class julianDate {
 
     private double year;
     private double month;
-    @Id
     private double day;
     private double hour;
     private double minute;
