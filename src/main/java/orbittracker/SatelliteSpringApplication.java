@@ -20,11 +20,6 @@ public class SatelliteSpringApplication {
 			System.out.println(sats);
 		}
 		julianDateService d = new julianDateService();
-		//dbProperties db = new dbProperties("jdbc:postgresql://localhost:5432/satellites", "postgres","1797");
-		//db.setUrl("jdbc:postgresql://localhost:5432/satellites");
-		//db.setUsername("postgres");
-		//db.setPassword("1797");
-		//d.getJD(new julianDate(23,2,2024));
 		System.out.println(d.getJD(new julianDate(2024,3,15,1,49,30)));
 		/*s.addSatellite(new satellite("IRS P6", 98.5525, 276.0870, 0.00563, 303.7850, 55.928, 14.341));
 		s.addSatellite(new satellite("IRS P5", 97.873, 257.9920, 0.001044, 51.2651, 308.8671, 14.787));
