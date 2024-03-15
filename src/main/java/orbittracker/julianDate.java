@@ -1,21 +1,30 @@
 package com.example.src.main.java.orbittracker;
 
 
-//@Entity
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class julianDate {
-    private Long id;
+
     private double year;
     private double month;
+    @Id
     private double day;
+    private double hour;
+    private double minute;
+    private double seconds;
 
     public julianDate() {
     }
 
-    public julianDate(Long id, double year, double month, double day) {
-        this.id = id;
+    public julianDate(double year, double month, double day, double hour, double minute, double seconds) {
         this.year = year;
         this.month = month;
         this.day = day;
+        this.hour = hour;
+        this.minute = minute;
+        this.seconds = seconds;
     }
 
 
@@ -42,23 +51,41 @@ public class julianDate {
     public void setDay(double day) {
         this.day = day;
     }
-
-    public Long getId() {
-        return id;
+    public double getHour() {
+        return hour;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setHour(double hour) {
+        this.hour = hour;
     }
+
+    public double getMinute() {
+        return minute;
+    }
+
+    public void setMinute(double minute) {
+        this.minute = minute;
+    }
+
+    public double getSeconds() {
+        return seconds;
+    }
+
+    public void setSeconds(double seconds) {
+        this.seconds = seconds;
+    }
+
 
 
     @Override
     public String toString() {
         return "julianDate{" +
-                "id=" + id +
-                ", year=" + year +
+                "year=" + year +
                 ", month=" + month +
                 ", day=" + day +
+                ", hour=" + hour +
+                ", minute=" + minute +
+                ", seconds=" + seconds +
                 '}';
     }
 }
