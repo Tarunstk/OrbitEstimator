@@ -11,11 +11,14 @@ public class satelliteService {
     //List<satellite> sats = new ArrayList<>();
     @Autowired
     satelliteDB db;
+    @Autowired
+    julianDateService jd;
     public void addSatellite(satellite s){
         //sats.add(s);
         db.save(s);
     }
     public List<satellite> getAllSats() {
+        jd.getJD();
         return db.findAll();
         //return sats;
     }
