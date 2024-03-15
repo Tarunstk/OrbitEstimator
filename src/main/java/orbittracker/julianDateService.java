@@ -37,14 +37,6 @@ public class julianDateService {
         System.out.println(H);
         System.out.println(Min);
         System.out.println(S);
-            /*
-            Y = date.getYear();
-            M = date.getMonth();
-            D = date.getDay();
-            H = date.getHour();
-            Min = date.getMinute();
-            S = date.getSeconds();
-             */
             A = Y/100;
             B = 2 - A + (A/4);
             JD = (365.25 * (Y + 4716)) + (30.6001 * (M + 1)) + ((D

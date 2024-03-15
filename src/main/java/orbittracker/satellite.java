@@ -85,7 +85,6 @@ public class satellite {
         this.n0 = n0;
     }
 
-    //@Override
     public String toString() {
         return "satelliteData{" +
                 "name='" + name + '\'' +
