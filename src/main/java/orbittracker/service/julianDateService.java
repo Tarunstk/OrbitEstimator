@@ -1,4 +1,4 @@
-package com.example.src.main.java.orbittracker;
+package com.example.src.main.java.orbittracker.service;
 
 import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;

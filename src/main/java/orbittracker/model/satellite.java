@@ -1,5 +1,6 @@
-package com.example.src.main.java.orbittracker;
+package com.example.src.main.java.orbittracker.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -9,7 +10,7 @@ import jakarta.persistence.Table;
 public class satellite {
     @Id
     private String name;
-    private double inc;//inclination
+    private double inc;// inclination
     private double raan;//Ascension node (right angle)
     private double e; //eccentricity
     private double omega;//Argument of Perigee
@@ -41,7 +42,7 @@ public class satellite {
         return inc;
     }
 
-    public void setInc(double in) {
+    public void setInc(double inc) {
         this.inc = inc;
     }
 
@@ -89,7 +90,7 @@ public class satellite {
     public String toString() {
         return "satelliteData{" +
                 "name='" + name + '\'' +
-                ", in=" + inc +
+                ", inc=" + inc +
                 ", raan=" + raan +
                 ", e=" + e +
                 ", omega=" + omega +

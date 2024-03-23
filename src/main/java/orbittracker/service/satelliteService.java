@@ -1,24 +1,24 @@
-package com.example.src.main.java.orbittracker;
+package com.example.src.main.java.orbittracker.service;
 
+import com.example.src.main.java.orbittracker.repository.satelliteDB;
+import com.example.src.main.java.orbittracker.model.satellite;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 
-import java.util.ArrayList;
 import java.util.List;
 @Component
 public class satelliteService {
     //List<satellite> sats = new ArrayList<>();
     @Autowired
     satelliteDB db;
-    @Autowired
-    julianDateService jd;
+    //@Autowired
+   // julianDateService jd;
     public void addSatellite(satellite s){
         //sats.add(s);
         db.save(s);
     }
     public List<satellite> getAllSats() {
-        jd.getJD();
+        //jd.getJD();
         return db.findAll();
         //return sats;
     }

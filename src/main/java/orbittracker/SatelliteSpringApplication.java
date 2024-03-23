@@ -1,5 +1,8 @@
 package com.example.src.main.java.orbittracker;
 
+import com.example.src.main.java.orbittracker.model.satellite;
+import com.example.src.main.java.orbittracker.service.julianDateService;
+import com.example.src.main.java.orbittracker.service.satelliteService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -11,11 +14,14 @@ public class SatelliteSpringApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SatelliteSpringApplication.class, args);
 		satelliteService service = context.getBean(satelliteService.class);
-		//service.addSatellite(new satellite("IRS P6", 98.5525, 276.0870, 0.00563, 303.7850, 55.928, 14.341));
+		//service.addSatellite(new satellite("IRS P12", 98.5525, 276.0870, 0.00563, 303.7850, 55.928, 14.341));
+		julianDateService service1 = context.getBean(julianDateService.class);
+		System.out.println(service1.getJD());
 		List<satellite> satellites = service.getAllSats();
 		for (satellite sats : satellites){
 			System.out.println(sats);
 		}
+
 		//julianDateService d = new julianDateService();
 		//System.out.println(d.getJD());
 		/*s.addSatellite(new satellite("IRS P6", 98.5525, 276.0870, 0.00563, 303.7850, 55.928, 14.341));
