@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/home")
@@ -23,6 +25,16 @@ public class SatelliteController {
         ss.addSatellite(sat);
         System.out.println("Added");
         return sat;
+    }
+    @GetMapping("/getSatellite")
+    public Optional<satellite> getSatellite(@RequestBody String s){
+       return ss.getSat(s);
+    }
+
+    @GetMapping("/getPosition")
+    public Map<String, Map<String, Double>> getPosition(@RequestBody String s){
+        System.out.println("fetching...");
+        return ss.getPosition(s);
     }
 
 

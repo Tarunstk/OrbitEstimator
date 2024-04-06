@@ -5,7 +5,11 @@ import com.example.src.main.java.orbittracker.model.satellite;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
 @Component
 public class satelliteService {
     //List<satellite> sats = new ArrayList<>();
@@ -33,6 +37,24 @@ public class satelliteService {
 
      */
 
+    public Optional<satellite> getSat(String s){
+        return db.findById(s);
+    }
 
-    //public
+
+    public Map<String, Map<String, Double>> getPosition(String sat){
+        System.out.println("entered map mode");
+        Map<String, Map<String, Double>> m = new HashMap<>();
+        Map<String, Double> pos = new HashMap<>();
+        Optional<satellite> s = db.findById(sat.strip());
+        System.out.println(s.isPresent());//checking if sat is being returned properly
+        //Need to strip the input properly cause when input comes in JSON format with spaces the satellite is not found.
+        //Also could change structure of the hashmap to maybe accept more values/different values
+        //Check this part properly
+        pos.put("Longitude", s.get().getInc());
+        pos.put("Latitude", s.get().getV0()); //testing with hardcoded values to check
+        m.put(sat, pos);
+        return m;
+    }
+
 }
