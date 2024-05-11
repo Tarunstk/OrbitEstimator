@@ -1,4 +1,4 @@
-package com.example.src.main.java.orbittracker.service;
+package orbittracker.service;
 
 import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ public class julianDateService {
     String timeday;
 
     public double getJD(){
-        double A,B,JD;
+        double A,B,JD,T,GMST;
         DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date day = new Date();
         timeday = df.format(day);
@@ -48,8 +48,11 @@ public class julianDateService {
             A = Y/100;
             B = 2 - A + (A/4);
             JD = (365.25 * (Y + 4716)) + (30.6001 * (M + 1)) + ((D
-                    + (H/24 + Min/1440 + S/86400)) + B) - 1524.5; //subtract by 0.222222225 for preciise fractional part of the day
-            return JD;
+                    + (H/24 + Min/1440 + S/86400)) + B) - 1524.5;
+            //subtract by 0.222222225 for preciise fractional part of the day
+            T = (JD - 2415545.0)/36525;
+            GMST = 280.46061837 + (360.985644736629 * (JD - 2415545.0)) + 0.000387933 * (T*T) - ((T*T*T)/3871000);
+        return GMST%360;
 
     }
 

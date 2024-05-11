@@ -9,12 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>julianDate</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>julianDate</name>
+	<artifactId>OrbitEstimator</artifactId>
+	<version>0.0.1</version>
+	<name>OrbitEstimator</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>

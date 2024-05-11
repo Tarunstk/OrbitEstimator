@@ -1,7 +1,7 @@
-package com.example.src.main.java.orbittracker.controller;
+package orbittracker.controller;
 
-import com.example.src.main.java.orbittracker.model.satellite;
-import com.example.src.main.java.orbittracker.service.satelliteService;
+import orbittracker.model.satellite;
+import orbittracker.service.satelliteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

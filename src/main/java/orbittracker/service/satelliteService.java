@@ -1,7 +1,7 @@
-package com.example.src.main.java.orbittracker.service;
+package orbittracker.service;
 
-import com.example.src.main.java.orbittracker.repository.satelliteDB;
-import com.example.src.main.java.orbittracker.model.satellite;
+import orbittracker.repository.satelliteDB;
+import orbittracker.model.satellite;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -51,6 +51,7 @@ public class satelliteService {
         //Need to strip the input properly cause when input comes in JSON format with spaces the satellite is not found.
         //Also could change structure of the hashmap to maybe accept more values/different values
         //Check this part properly
+
         pos.put("Longitude", s.get().getInc());
         pos.put("Latitude", s.get().getV0()); //testing with hardcoded values to check
         m.put(sat, pos);

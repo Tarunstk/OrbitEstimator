@@ -1,8 +1,8 @@
-package com.example.src.main.java.orbittracker;
+package orbittracker;
 
-import com.example.src.main.java.orbittracker.model.satellite;
-import com.example.src.main.java.orbittracker.service.julianDateService;
-import com.example.src.main.java.orbittracker.service.satelliteService;
+import orbittracker.model.satellite;
+import orbittracker.service.julianDateService;
+import orbittracker.service.satelliteService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;

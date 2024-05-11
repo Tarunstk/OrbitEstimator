@@ -1,4 +1,4 @@
-package com.example.src.main.java.orbittracker.model;
+package orbittracker.model;
 
 
 import jakarta.persistence.Entity;

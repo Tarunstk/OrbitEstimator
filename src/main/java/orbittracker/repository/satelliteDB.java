@@ -1,6 +1,6 @@
-package com.example.src.main.java.orbittracker.repository;
+package orbittracker.repository;
 
-import com.example.src.main.java.orbittracker.model.satellite;
+import orbittracker.model.satellite;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
