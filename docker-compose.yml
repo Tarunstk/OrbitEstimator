@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  psql-db:
+    image: postgres
+    container_name: satellitedb2
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1797
+      - POSTGRES_DB=satellites
+    ports:
+      - '5432:5432'
+    volumes:
+      - E:\Personal_work\Project_SatNav\OrbitEstimator\src\main\data:/var/lib/postgresql/data
+
+  satellite:
+    container_name: satellite_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '8081:8080'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://satellitedb2:5432/satellites
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=1797
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      - psql-db
